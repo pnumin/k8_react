@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 
 // import Hello from './01/Hello' ;
 // import MyClock from './02/MyClock' ;
+import MyDiv1 from './03/MyDiv1';
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
       </header>
       <main className='w-full grow
                        flex flex-col justify-center items-center
-                       overflow-y-scroll'>
+                       overflow-y-auto'>
 
+        <MyDiv1 />
       </main>
       <footer className='w-full h-20
                          flex justify-center items-center
