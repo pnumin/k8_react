@@ -3,6 +3,7 @@ import MyListItem from './MyListItem';
 export default function MyList() {
   console.log(MyListData)
   const tags = MyListData.map( item => <MyListItem 
+                                        key= {item.title}
                                         imgUrl = {item.imgUrl}
                                         content = {item.content}
                                         title = {item.title} /> ) ;
