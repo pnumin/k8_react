@@ -8,9 +8,30 @@ export default function Lotto() {
   const [tags, setTags] = useState();
 
   const handleClick = () => {
-    console.log('handleClick1')
-    let n = Math.floor(Math.random() * 45) + 1 ; //1~45 랜덤수 생성
-    setTags(<h1 className="text-3xl">{n}</h1>);
+    let arr = [] ;
+
+    while(arr.length < 7) {
+      let n = Math.floor(Math.random() * 45) + 1 ; //1~45 랜덤수 생성
+
+      if (!arr.includes(n)) arr.push(n) ;
+    }
+    
+    //보너스 번호 
+    const bonus = arr.splice(-1) ;
+    //번호 정렬
+    arr.sort((a, b) => a - b);
+
+    //보너스 번호 추가
+    arr = arr.concat(bonus) ;
+
+    //볼만들기
+    let tm = arr.map(item => <TailBall  key={'b'+ item} 
+                                        n={item}/>);
+
+    //plus기호 넣기
+    tm.splice(6,0, <div className="text-3xl mx-2 font-bold" key="sp">+</div>)                                    
+    console.log(tm)
+    setTags(tm);
   }
 
   return (
