@@ -16,7 +16,7 @@ export default function MyListItem({imgUrl, content, title}) {
       </div>
       <div className='w-2/3 h-full p-5 flex flex-col justify-start items-center'>
         <div className="flex flex-col  h-3/4">
-          <div className="text-2xl font-bold mb-2">
+          <div className="text-2xl font-bold mb-2 text-blue-700">
             {title}
           </div>
           <div className="text-sm">
