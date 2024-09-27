@@ -1,3 +1,6 @@
+import busan from './img/busan.png' ;
+import bank from './img/bank.png' ;
+import market from './img/market.png' ;
 
 export default function FoodCard() {
   const obj = {
@@ -12,9 +15,19 @@ export default function FoodCard() {
     "운영주체명": "부산광역시사회복지협의회"
   };
 
+  // const objImg = {
+  //   "광역지원센터" : busan,
+  //   "기초푸드뱅크" : bank,
+  //   "기초푸드마켓" : market
+  // }
+
   return (
     <div>
-      card
+      <img src={busan} alt='광역지원센터' /> 
+      {obj.구분}
+      {obj["사업장명"]}
+      {obj["사업장 소재지"]}
+      {obj["연락처(대표번호)"]}
     </div>
   )
 }
