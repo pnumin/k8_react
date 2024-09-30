@@ -22,6 +22,11 @@ export default function BoxOffice() {
     console.log(url);
   }
 
+  const handleTrClick = (item) => {
+    console.log(item) ;
+  }
+
+
   //맨처음 한번 실행
   useEffect(() => {
     getFetchData();
@@ -32,6 +37,7 @@ export default function BoxOffice() {
     if (!tdata) return ;
     console.log('tdata', tdata);
     let tm = tdata.map(item => <BoxOfficeTr 
+                                handleClick = {()=> handleTrClick(item)}
                                 mv = {item}
                                 key={item.movieCd} />)
     setTrs(tm) ;

@@ -1,7 +1,8 @@
 
-export default function BoxOfficeTr({mv}) {
+export default function BoxOfficeTr({handleClick, mv}) {
   return (
-    <tr className="bg-white border-b hover:bg-gray-50">
+    <tr   onClick={handleClick}
+          className="bg-white border-b hover:bg-gray-50 cursor-pointer">
       <td className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {mv.rank}
       </td>
