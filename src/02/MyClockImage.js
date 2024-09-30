@@ -1,8 +1,10 @@
+import clock from './colock.png' ;
+
 function MyClockImage() {
 
   return(
-    <div>
-    이미지
+    <div className='w-full flex justify-center items-center'>
+      <img src={clock} alt='시계' className='h-3/5'/>
     </div>
   );
 }
