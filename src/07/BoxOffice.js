@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BoxOfficeTr from "./BoxOfficeTr";
 export default function BoxOffice() {
   const [tdata, setTdata] = useState();
+  const [info, setInfo] = useState();
   const [trs, setTrs] = useState();
 
   const getFetchData = () => {
@@ -24,6 +25,9 @@ export default function BoxOffice() {
 
   const handleTrClick = (item) => {
     console.log(item) ;
+    let tm = `[${item.movieCd}] ${item.movieNm} : 
+                  누적관객수 ${parseInt(item.audiCnt).toLocaleString()}명 입니다.` ;
+    setInfo(tm);
   }
 
 
@@ -58,7 +62,7 @@ export default function BoxOffice() {
             <th scope="col" className="px-6 py-3">
               매출액
             </th>
-            <th scope="col" claclassNamess="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               관객수
             </th>
             <th scope="col" className="px-6 py-3">
@@ -69,6 +73,15 @@ export default function BoxOffice() {
         <tbody>
           {trs}
         </tbody>
+        <tfoot>
+          <tr className="bg-black text-white w-full
+                          text-center
+                          h-10 p-2">
+            <td colSpan={5} >
+                {info}
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   )
