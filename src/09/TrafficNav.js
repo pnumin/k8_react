@@ -1,10 +1,5 @@
-import TailButton from '../UI/TailButton' ;
-import { useEffect, useState } from 'react';
-
-export default function TrafficNav({title, c}) {
-  const [sel, setSel] = useState() ;
-
-  // const c = ['차대사람', '차대차', '차량단독', '철길건널목'] ;
+import TailButton from '../UI/TailButton' ; 
+export default function TrafficNav({title, c, sel, setSel}) {
 
   const handleBtClick = (item) => {
     setSel(item) ;
@@ -17,9 +12,6 @@ export default function TrafficNav({title, c}) {
                               />
   );
 
-  useEffect(()=>{
-    console.log(sel) ;
-  }, [sel]);
   return (
     <div className='w-full bg-blue-50 p-2 m-1
                     flex justify-between items-center
