@@ -50,7 +50,10 @@ export default function BoxOffice() {
 
   //맨처음 한번 실행
   useEffect(() => {
-    getFetchData();
+    const ydt = getYesterday() ;
+    console.log('yesterday = ', ydt);
+    dtRef.current.value = ydt ;
+    //getFetchData();
   }, []);
 
   //fetch 데이터가 채워지면
