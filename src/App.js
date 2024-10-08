@@ -7,10 +7,11 @@ import { FaHome } from "react-icons/fa";
 // import MyList from './04/MyList';
 // import Lotto from './05/Lotto';
 // import FoodMain from './06/FoodMain';
-import BoxOffice from './07/BoxOffice';
+// import BoxOffice from './07/BoxOffice';
 // import MyBox from './08/MyBox';
 // import Traffic from './09/Traffic' ;
 // import MyRef from './10/MyRef';
+import Gallery from './11/Gallery';
 
 function App() {
   return (
@@ -35,10 +36,11 @@ function App() {
         {/* <MyList /> */}
         {/* <Lotto /> */}
         {/* <FoodMain /> */}
-        <BoxOffice />
+        {/* <BoxOffice /> */}
         {/* <MyBox /> */}
         {/* <Traffic /> */}
         {/* <MyRef /> */}
+        <Gallery />
       </main>
       <footer className='w-full h-20 flex-shrink-0
                          flex justify-center items-center

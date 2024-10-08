@@ -22,9 +22,9 @@ export default function BoxOffice() {
     return `${year}-${month}-${day}`;
   }
 
-  const getFetchData = () => {
+  const getFetchData = (dt) => {
     const apiKey = process.env.REACT_APP_MV_KEY;
-    const dt = '20240929';
+    // const dt = '20240929';
 
     let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`;
     url = `${url}key=${apiKey}&targetDt=${dt}`;
@@ -47,13 +47,18 @@ export default function BoxOffice() {
     setInfo(tm);
   }
 
+  const handleDt = () => {
+    const cdt = dtRef.current.value.replaceAll('-','') ;
+    getFetchData(cdt);
+  }
 
   //맨처음 한번 실행
   useEffect(() => {
     const ydt = getYesterday() ;
     console.log('yesterday = ', ydt);
     dtRef.current.value = ydt ;
-    //getFetchData();
+    dtRef.current.max = ydt ;
+    getFetchData(ydt.replaceAll('-',''));
   }, []);
 
   //fetch 데이터가 채워지면
@@ -76,7 +81,8 @@ export default function BoxOffice() {
           박스오피스
         </div>
         <div>
-          <input ref={dtRef} type='date' id='dt' name='dt' />
+          <input ref={dtRef} type='date' id='dt' name='dt' 
+                onChange={handleDt}/>
         </div>
       </div>
       <table className="w-10/12 text-sm text-left rtl:text-right text-gray-500">
