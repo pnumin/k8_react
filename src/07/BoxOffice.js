@@ -82,6 +82,7 @@ export default function BoxOffice() {
         </div>
         <div>
           <input ref={dtRef} type='date' id='dt' name='dt' 
+                className="form-input"
                 onChange={handleDt}/>
         </div>
       </div>
