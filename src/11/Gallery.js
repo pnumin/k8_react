@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 export default function Gallery() {
 
   const x = useRef() ;
+  
 
   const handleCancel = () => {
     x.current.value = '' ;
