@@ -12,6 +12,7 @@ import { FaHome } from "react-icons/fa";
 // import Traffic from './09/Traffic' ;
 // import MyRef from './10/MyRef';
 import Gallery from './11/Gallery';
+import Festival from './12/Festival';
 
 function App() {
   return (
@@ -40,7 +41,8 @@ function App() {
         {/* <MyBox /> */}
         {/* <Traffic /> */}
         {/* <MyRef /> */}
-        <Gallery />
+        {/* <Gallery /> */}
+        <Festival />
       </main>
       <footer className='w-full h-20 flex-shrink-0
                          flex justify-center items-center
