@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef} from "react"
-
+import TailCard from "../UI/TailCard";
 export default function Festival() {
   //전체 축제 데이터
   const [tdata, setTdata] = useState([]) ;
   //구정보
   const [gunm, setGunm] = useState([]) ;
-  //선택된 구정보
-  const [selgu, setSelgu] = useState() ;
+  //선택된 축제
+  const [tags, setTags] = useState([]) ;
 
   //select box를 제어
   const gu = useRef();
@@ -26,7 +26,19 @@ export default function Festival() {
 
   //option이 선택이 되면
   const handleSelect = () => {
-    console.log(gu.current.value) ;
+    // console.log(gu.current.value) ;
+    //해당하는 구의 축제 추출 
+    const tm = tdata.filter(item => item.GUGUN_NM === gu.current.value) 
+                    .map(item => <TailCard 
+                                    key = {item.UC_SEQ}
+                                    imgUrl = {item.MAIN_IMG_THUMB}
+                                    title = {item.TITLE}
+                                    content = {item.TRFC_INFO} 
+                                    kw = {item.PLACE} />
+                    );
+
+ 
+    setTags(tm) ;
   }
 
 
@@ -58,6 +70,10 @@ export default function Festival() {
             {gunm}
         </select>
       </div>
+      <div className="w-10/12 p-2 grid  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-2">
+        {tags}
+      </div>
+
     </div>
   )
 }
