@@ -14,7 +14,7 @@ export default function RoutePage2() {
     <div className="text-3xl mt-10">
       RoutePage2
       { 
-        qlist.map(item => <span>{item[1]}</span>) 
+        qlist.map(item => <span key={item[0]}>{item[1]}</span>) 
       }
     </div>
   )
