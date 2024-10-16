@@ -10,6 +10,9 @@ export default function FcstList() {
   //전체데이터
   const [tdata, setTdata] = useState([]) ;
 
+  //선택항목 테이블 데이터
+  const [trs, setTrs] = useState([]) ;
+
   //form 값을 참조하기 위한 ref변수
   const selRef = useRef() ;
 
@@ -27,9 +30,23 @@ export default function FcstList() {
     console.log(selRef.current.value) ;
     if (!tdata) return ;
 
-    const tm = tdata.filter(item => item['category'] === selRef.current.value);
+    const code = getcode.filter(item => item['항목값'] === selRef.current.value )[0];
+    console.log('code' , code) ;
 
-    console.log(tm) ;
+    const tm = tdata.filter(item => item['category'] === selRef.current.value)
+                    .map(item => <tr className="bg-white border-b hover:bg-gray-50 cursor-pointer h-10" 
+                                    key={item.category + item.fcstDate +item.fcstTime}>
+                                  <td>{code.항목명}({item.category})</td>
+                                  <td>
+                                    {item.fcstDate.slice(0,4)}.{item.fcstDate.slice(4,6)}.{item.fcstDate.slice(6,8)}
+                                  </td>
+                                  <td>
+                                    {item.fcstTime.slice(0,2)}:{item.fcstTime.slice(2,4)}
+                                  </td>
+                                  <td>{item.fcstValue}{code.단위}</td>
+                                 </tr>);
+
+    setTrs(tm) ;
   }
 
   //데이터 가져오기
@@ -79,7 +96,27 @@ export default function FcstList() {
           {ops}
         </select>
       </div>  
-      <table>
+      <table className="w-10/12 text-sm text-left rtl:text-right text-gray-500">
+        <thead className="text-md font-bold text-white  bg-black">
+          <tr>
+            <th scope="col" className="px-6 py-3">
+              항목명
+            </th>
+            <th scope="col" className="px-6 py-3">
+              예측일자
+            </th>
+            <th scope="col" className="px-6 py-3">
+              예측시간
+            </th>
+            <th scope="col" className="px-6 py-3">
+              예측값
+            </th> 
+          </tr>
+        </thead>
+        <tbody>
+          {trs}
+        </tbody>
+        
       </table>
     </div>
   )
