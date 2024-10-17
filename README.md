@@ -53,6 +53,8 @@
     ```
     <input type='number' ref = {inRef} />
     ```
+
+9. recoil로 상태변수 관리
 ---
 [TailwindCss]
 1. classname에 클래명으로 추가

@@ -15,7 +15,7 @@ import Gallery from './11/Gallery';
 import Festival from './12/Festival';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
-import Recoil1 from './15/Recoil1';
+import RecoilMain from './15/RecoilMain';
 
 // import RouteMain from './13/RouteMain';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -75,7 +75,7 @@ function App() {
             <Route path='/fcst' element={<Fcst />} />
             <Route path='/fcstlist' element={<FcstList />} />
             <Route path='/mydiv' element={<MyDiv1 />} />
-            <Route path='/recoil1' element={<Recoil1 />} />
+            <Route path='/recoil1' element={<RecoilMain />} />
             {/* <MyList /> */}
             {/* <Lotto /> */}
             {/* <FoodMain /> */}
