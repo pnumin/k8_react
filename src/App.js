@@ -3,7 +3,7 @@ import { FaHome } from "react-icons/fa";
 
 // import Hello from './01/Hello' ;
 import MyClock from './02/MyClock' ;
-// import MyDiv1 from './03/MyDiv1';
+import MyDiv1 from './03/MyDiv1';
 // import MyList from './04/MyList';
 import Lotto from './05/Lotto';
 import FoodMain from './06/FoodMain';
@@ -15,6 +15,7 @@ import Gallery from './11/Gallery';
 import Festival from './12/Festival';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
+import Recoil1 from './15/Recoil1';
 
 // import RouteMain from './13/RouteMain';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -59,7 +60,7 @@ function App() {
             <Link to='/'><FaHome /></Link>
           </p>
         </header>
-        <main className='w-full flex-grow  
+        <main className='w-full flex-grow
                        flex flex-col items-center
                        overflow-y-auto'>
           <Routes>
@@ -73,7 +74,8 @@ function App() {
             <Route path='/festival' element={<Festival />} />
             <Route path='/fcst' element={<Fcst />} />
             <Route path='/fcstlist' element={<FcstList />} />
-
+            <Route path='/mydiv' element={<MyDiv1 />} />
+            <Route path='/recoil1' element={<Recoil1 />} />
             {/* <MyList /> */}
             {/* <Lotto /> */}
             {/* <FoodMain /> */}

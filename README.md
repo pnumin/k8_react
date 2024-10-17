@@ -44,6 +44,15 @@
       + [] : 컴포넌트 생성시
       + [state변수] : 특정 State변수가 변경 되었을 때
       + [] 생략 : 컴포넌트가 변경이 될때 마다
+  
+8. useRef
+  + 폼요소 참조시 사용 가능 
+  + 선언 : const ref변수명 = useRef()
+    + import {useRef} from react ; 
+    + 폼요소에 ref속성으로 연결 : 
+    ```
+    <input type='number' ref = {inRef} />
+    ```
 ---
 [TailwindCss]
 1. classname에 클래명으로 추가
