@@ -13,11 +13,11 @@ export default function Rdiv1() {
       RDiv1 : x={x} , y={y}
       </div>
       <div className="w-full grid grid-cols-2 gap-4 place-items-center">
-        <RDiv2 />
-        <RDiv2/>
+        <RDiv2 x2={x} y2={y} />
+        <RDiv2 x2={y} y2={x} />
       </div>  
       <div className="w-full h-1/2 flex justify-center items-center">
-        <Rdiv3 /> 
+        <Rdiv3 x3={x*3} y3={y*3} /> 
       </div>
       
     </div>
