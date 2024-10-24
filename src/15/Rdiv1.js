@@ -1,8 +1,11 @@
 import RDiv2 from "./RDiv2" ;
 import Rdiv3 from "./Rdiv3";
+import { AtomN, AtomN2 } from "./AtomN";
+import { useRecoilValue } from "recoil";
+
 export default function Rdiv1() {
-  const x = 10 ;
-  const y = 20 ;
+  const x = useRecoilValue(AtomN) ;
+  const y = useRecoilValue(AtomN2) ;
 
   return (
     <div className="w-4/6 h-4/6 
@@ -13,11 +16,11 @@ export default function Rdiv1() {
       RDiv1 : x={x} , y={y}
       </div>
       <div className="w-full grid grid-cols-2 gap-4 place-items-center">
-        <RDiv2 x2={x} y2={y} />
-        <RDiv2 x2={y} y2={x} />
+        <RDiv2 />
+        <RDiv2 />
       </div>  
       <div className="w-full h-1/2 flex justify-center items-center">
-        <Rdiv3 x3={x*3} y3={y*3} /> 
+        <Rdiv3 /> 
       </div>
       
     </div>
