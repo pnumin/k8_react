@@ -1,45 +1,28 @@
 import TailButton from "../UI/TailButton" ;
 import { useState, useEffect, useRef } from "react";
 export default function Rest() {
-  const [tdata, setTdata] = useState([]) ;
-  const [trs , setTrs] = useState([]) ;
-
+  //화면 재랜더링을 위한 state변수
+  const [tdata, setTdata] = useState([]);
+  const [trs, setTrs] = useState([]) ;
+  
+  //입력값을 제어하기 위한 ref변수
   const txt1Ref = useRef();
   const txt2Ref = useRef();
 
-  const url = 'http://localhost:3005/posts' ;
+  //restfull endpoint 주소
+  const url = 'http://localhost:3005/posts';
 
-  const getFetchData = async() => {
-    const resp = await fetch(url) ;
-    const data = await resp.json() ;
-
-    setTdata(data);
-  }
-
+  //컴포넌트 생성시 실행
   useEffect(()=>{
-    getFetchData();
-  },[]) ;
+    //데이터 가져오기
+    
+  }, []);
 
-  useEffect(()=>{
-    const tm = tdata.map(item => <tr key={item.id}>
-                                  <td>{item.title}</td>
-                                  <td>{item.author}</td>
-                                  <td>
-                                  <TailButton caption='삭제'
-                                                color='orange'
-                                                handleClick=''
-                                                size='w-1/2' /> 
-                                  </td>
-                                  <td>
-                                  <TailButton caption='수정'
-                                                color='lime'
-                                                handleClick=''
-                                                size='w-1/2' />
-                                  </td>
-                                 </tr>);
-    setTrs(tm);
-  }, [tdata]);
+  //tdata가 변경이 되었을 때 실행
+  useEffect(()=>{}, [tdata]);
 
+  //컴포넌트가 재랜더링 될때 마다 실행
+  //useEffect(()=>{});
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-7 
@@ -49,15 +32,17 @@ export default function Rest() {
         <div className="flex col-span-3">
           <input id="txt1"
             type="text" 
+            ref = {txt1Ref}
             className="form-input  w-full"
-            inRef={txt1Ref} />
+              />
         </div>
         <label htmlFor="txt2" className="my-2">작성자</label>
         <div className="flex">
           <input id="txt2"
             type="text"
+            ref = {txt2Ref}
             className="form-input w-full"
-            inRef={txt2Ref} />
+              />
         </div>
         <TailButton caption='입력'
                       color='blue'
@@ -76,7 +61,7 @@ export default function Rest() {
           </tr>
         </thead>
         <tbody>
-          {trs}
+         
         </tbody>
       </table>
     </div>
