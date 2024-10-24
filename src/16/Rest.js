@@ -12,14 +12,34 @@ export default function Rest() {
   //restfull endpoint 주소
   const url = 'http://localhost:3005/posts';
 
+  //데이터 가져오기 사용자 정의함수
+  const getFetchData = async() => {
+    const resp = await fetch(url) ;
+    console.log('resp =', resp) ;
+    const data = await resp.json();
+    console.log('data =', data) ;
+
+    //전체 데이터 저장 state변수에 넣기
+    setTdata(data) ;
+  }
+
   //컴포넌트 생성시 실행
   useEffect(()=>{
     //데이터 가져오기
-    
+    getFetchData() ;
+
   }, []);
 
   //tdata가 변경이 되었을 때 실행
-  useEffect(()=>{}, [tdata]);
+  useEffect(()=>{
+    const tm = tdata.map(item=> <tr key={item.id} className="bg-white border-b h-10 hover:bg-gray-50 cursor-pointer">
+                                  <td className="text-center">{item.title}</td>
+                                  <td className="text-center">{item.author}</td>
+                                  <td className="text-center">삭제</td>
+                                  <td className="text-center">수정</td>
+                                </tr>);
+    setTrs(tm);
+  }, [tdata]);
 
   //컴포넌트가 재랜더링 될때 마다 실행
   //useEffect(()=>{});
@@ -61,7 +81,7 @@ export default function Rest() {
           </tr>
         </thead>
         <tbody>
-         
+         {trs}
         </tbody>
       </table>
     </div>
