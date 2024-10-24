@@ -16,6 +16,7 @@ import Festival from './12/Festival';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
 import RMain from './15/RMain';
+import Rest from './16/Rest';
 
 // import RouteMain from './13/RouteMain';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -55,6 +56,9 @@ function App() {
             <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
               <Link to='/fcst'>일기예보</Link>
             </li>
+            <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
+              <Link to='/rest'>Restfull</Link>
+            </li>
           </ul>
           <p className='text-4xl font-bold p-5'>
             <Link to='/'><FaHome /></Link>
@@ -76,6 +80,7 @@ function App() {
             <Route path='/fcstlist' element={<FcstList />} />
             <Route path='/mydiv' element={<MyDiv1 />} />
             <Route path='/rmain' element={<RMain />} />
+            <Route path='/rest' element={<Rest />} />
             {/* <MyList /> */}
             {/* <Lotto /> */}
             {/* <FoodMain /> */}
