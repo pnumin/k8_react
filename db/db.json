@@ -1,14 +1,19 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "dkdkdkdkThis is a comment1.",
-      "author": "김경민"
+      "title": "테스트1234",
+      "author": "김경민",
+      "id": "5e52"
     },
     {
-      "id": "2",
-      "title": "dkdkdkdkThis is a comment1.",
-      "author": "김경민2"
+      "title": "테스트121111111",
+      "author": "김경민2111",
+      "id": "c4cd"
+    },
+    {
+      "title": "안녕",
+      "author": "김경민",
+      "id": "5aa7"
     }
   ],
   "comments": [
@@ -24,4 +29,3 @@
     }
   ]
 }
-
